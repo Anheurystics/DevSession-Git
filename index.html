@@ -87,28 +87,22 @@
 						cmd: <b>del [foldername]</b>
 						</p>
 					</section>
-
-
-
-
-
-
-
 				</section>
 
 				<!-- what is git -->
 				<section>
 					what is git?
 					<section>
-					git is a <b>version control system</b>
-					<ul>
-						<li>keeps track of changes to your source code</li>
-						<li>makes it easier to collaborate with others</li>
-						<li>makes going back to previous versions simple</li>
-					</ul>
+						git is a <b>version control system</b>
+						<ul>
+							<li>keeps track of changes to your source code</li>
+							<li>makes it easier to collaborate with others</li>
+							<li>makes going back to previous versions simple</li>
+						</ul>
 					</section>
-			</section>
+				</section>
 
+				<!-- getting started with git -->
 				<section>
 					getting started with git
 					<section>
@@ -144,6 +138,7 @@
 					</section>
 				</section>
 
+				<!-- adding local changes -->
 				<section>
 					adding local changes
 					<section>
@@ -158,7 +153,8 @@
 						<span class="footnote">for now, use the -m switch to specify the commit message right now, instead of having to deal with an external text editor</span>
 					</section>
 					<section>
-						you can view all of the commits you've made so far using <span class="command">git log</span>
+						you can view all of the commits you've made so far using <span class="command">git log</span><br/>
+						<img src="images/gitlog.png"></img>
 					</section>
 					<section>
 						to view the status of your repo, use <span class="command">git status</span><br/><br/>
@@ -170,9 +166,15 @@
 						</ul>
 					</section>
 					<section>
+						<span class="command">git diff</span> will tell you in-depth of the changes you've made to a file since your last add/commit
+						<img src="images/gitdiff.png"></img>
+					</section>
+					<section>
 						so far, the commits you created are just stored in your local repository. <span class="command">git push [remote] [branch]</span> "uploads" your changes to the remote repository
 					</section>
 				</section>
+
+				<!-- branching and merging -->
 				<section>
 					branching and merging
 					<section>
@@ -190,8 +192,38 @@
 					<section>
 						<span class="command">git merge [branch-name]</span> merges the specified branch with the branch you are currently on
 					</section>
+					<section>
+						git's merge tool tries its best to incorporate changes from both branches, but will throw an error if it finds a MERGE CONFLICT<br/>
+						<img src="images/mergeconflict.png"></img>
+					</section>
+					<section>
+						resolving a merge conflict means deleting any conflicting code<br/>
+						<img src="images/mergeconflict1.png"></img>
+					</section>
+				</section>
 
-
+				<section>
+					using GitHub
+					<section>
+						GitHub has other features to make it easy to share code and collaborate with others
+					</section>
+					<section>
+						in GitHub, to <b>fork</b> a repo means to make a copy of it (source code and commits) for yourself to work on<br/>
+						<img src="images/fork.png"><br/>
+						<img src="images/fork1.png"><br/>
+					</section>
+					<section>
+						after working on your fork, you can submit a <b>pull request</b> to the original repo to propose changes from your fork<br/>
+						<img src="images/fork2.png"><br/>
+					</section>
+					<section>
+						forks are a safe way to contribute to other people's projects while keeping code safe
+						<img src="images/fork3.png"><br/>
+					</section>
+					<section>
+						this mechanism is what allows for collaboration in open-source projects on a large scale
+						<img src="images/fork4.png"><br/>
+					</section>
 				</section>
 			</div>
 		</div>
