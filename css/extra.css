@@ -1,0 +1,11 @@
+span.command {
+    display: inline-block;
+    background-color: black;
+    font-family: monospace;
+    font-style: italic;
+    padding: 0.1em;
+}
+
+span.footnote {
+    font-size: 0.65em;
+}

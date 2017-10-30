@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>how to use git</section>
+				<section>
+					today we're going to learn
+					<ul>
+						<li>basic bash/cmd</li>
+						<li>how git works</li>
+						<li>creating a repository</li>
+						<li>adding and committing changes</li>
+						<li>updating a repository</li>
+						<li>branching and merging</li>
+						<li>GitHub-specific operations</li>
+					</ul>
+				</section>
+				<!-- basic bash and cmd -->
+				<section>
+					basic bash/cmd
+					<section>
+						a <b>command line</b> or a <b>terminal</b> is a purely text-based interface for running commands and performing various operations
+					</section>
+					<section>
+						<b>git</b> is primarily run through a command line interface
+					</section>
+					<section>
+						<b>bash</b> is the command line for linux/macOS<br/><b>cmd</b> is for Windows
+					</section>
+					<section>
+						<h5>show current directory</h5>
+						<i>outputs the path the CLI is currently in</i><br/><br/>
+						bash: <b>pwd</b><br/>
+						cmd: <b>cd</b>
+					</section>
+					<section>
+						<h5>change directory</h5>
+						<i>change current directory to the one specified by [path]</i><br/><br/>
+						bash: <b>cd [path]</b><br/>
+						cmd: <b>cd [path]</b>
+					</section>
+					<section>
+						<h5>directory aliases</h5>
+						<br/><br/>
+						. - current directory</br>
+						.. - previous directory</br>
+					</section>
+					<section>
+						<h5>show directory contents</h5>
+						<i>list down files and subdirectories in current directory, or in [path] if specified</i><br/><br/>
+						bash: <b>ls [path]</b><br/>
+						cmd: <b>dir [path]</b>
+					</section>
+					<section>
+						<h5>delete file</h5>
+						<br/><br/>
+						bash: <b>rm [filename]</b><br/>
+						cmd: <b>del [filename]</b>
+					</section>
+					<section>
+						<h5>delete folder</h5>
+						<br/><br/>
+						<p align="left">
+						bash: <b>rm -r [foldername]</b><br/>
+						cmd: <b>del [foldername]</b>
+						</p>
+					</section>
+
+
+
+
+
+
+
+				</section>
+
+				<!-- what is git -->
+				<section>
+					what is git?
+					<section>
+					git is a <b>version control system</b>
+					<ul>
+						<li>keeps track of changes to your source code</li>
+						<li>makes it easier to collaborate with others</li>
+						<li>makes going back to previous versions simple</li>
+					</ul>
+					</section>
+			</section>
+
+				<section>
+					getting started with git
+					<section>
+						<p style="font-size: 0.75em;">shameless plug: http://wildcard.compsat.org/2015/10/14/the-great-things-you-can-do-with-git/</p>
+						<img src="images/plug.png"></img>
+					</section>
+					<section>
+						to make a folder into a local git repository, we have to type<br/>
+						<span class="command">git init</span>
+						in the command line
+					</section>
+					<section>
+						this local repository is useless without a remote repository. this is where GitHub comes in
+						<img src="images/githublogin.png"></img>
+					</section>
+					<section>
+						create a new project, give it a name and an optional description<br/>
+						<img src="images/githubnewproj1.png"></img>
+					</section>
+					<section>
+						remember the link it shows you afterwards-- this is your remote URL<br/>
+						<img src="images/githubremote.png"></img>
+					</section>
+					<section>
+						go back to your repo, and set the remote URL using
+						<span class="command">git remote add [remote-name] [remote-url]</span>
+					</section>
+					<section>
+						i might've wasted your time, because the previous steps can be also done using
+						<span class="command">git clone [remote-url]</span>
+						<br/>
+						<span class="footnote">(clone also pulls the changes from the remote repo. we'll get back to that later)</span>
+					</section>
+				</section>
+
+				<section>
+					adding local changes
+					<section>
+						now that we have the local repo connected to the remote repo, we can start adding changes
+					</section>
+					<section>
+						to add changed files to what is called the <b>staging area</b> you use the <span class="command">git add</span> command
+					</section>
+					<section>
+						to package all of the added changes together into one <b>commit</b>, use <span class="command">git commit -m [commit message]</span>
+						<br/>
+						<span class="footnote">for now, use the -m switch to specify the commit message right now, instead of having to deal with an external text editor</span>
+					</section>
+					<section>
+						you can view all of the commits you've made so far using <span class="command">git log</span>
+					</section>
+					<section>
+						to view the status of your repo, use <span class="command">git status</span><br/><br/>
+						the status will tell you
+						<ul>
+						<li>the untracked (unadded) files</li>
+						<li>whether or not your local and remote repositories are synchronized</li>
+						<li>etc</li>
+						</ul>
+					</section>
+					<section>
+						so far, the commits you created are just stored in your local repository. <span class="command">git push [remote] [branch]</span> "uploads" your changes to the remote repository
+					</section>
+				</section>
+				<section>
+					branching and merging
+					<section>
+						sometimes, you want different versions of your code in parallel
+					</section>
+					<section>
+						<span class="command">git branch [branch-name]</span> creates a new branch
+					</section>
+					<section>
+						<span class="command">git checkout [branch-name]</span> switches to a branch
+					</section>
+					<section>
+						<span class="command">git checkout -b [branch-name]</span> creates a branch and automatically switches to it
+					</section>
+
+
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<link rel="stylesheet" href="css/extra.css" />
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
